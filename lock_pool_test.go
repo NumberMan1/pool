@@ -1,4 +1,4 @@
-package slab
+package pool
 
 import (
 	"github.com/NumberMan1/unittest"

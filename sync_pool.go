@@ -1,4 +1,4 @@
-package slab
+package pool
 
 import "sync"
 

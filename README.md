@@ -9,11 +9,11 @@ Usage
 Use lock-free memory pool:
 
 ```go
-pool := slab.NewAtomPool(
+pool := pool.NewAtomPool(
 	64,          // The smallest chunk size is 64B.
 	64 * 1024,   // The largest chunk size is 64KB.
 	2,           // Power of 2 growth in chunk size.
-	1024 * 1024, // Each slab will be 1MB in size.
+	1024 * 1024, // Each pool will be 1MB in size.
 )
 
 buf1 := pool.Alloc(64)
@@ -26,11 +26,11 @@ pool.Free(buf)
 Use `chan` based memory pool:
 
 ```go
-pool := slab.NewChanPool(
+pool := pool.NewChanPool(
 	64,          // The smallest chunk size is 64B.
 	64 * 1024,   // The largest chunk size is 64KB.
 	2,           // Power of 2 growth in chunk size.
-	1024 * 1024, // Each slab will be 1MB in size.
+	1024 * 1024, // Each pool will be 1MB in size.
 )
 
 buf1 := pool.Alloc(64)
@@ -43,7 +43,7 @@ pool.Free(buf)
 Use `sync.Pool` based memory pool:
 
 ```go
-pool := slab.NewSyncPool(
+pool := pool.NewSyncPool(
 	64,          // The smallest chunk size is 64B.
 	64 * 1024,   // The largest chunk size is 64KB.
 	2,           // Power of 2 growth in chunk size.

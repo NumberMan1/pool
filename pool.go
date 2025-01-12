@@ -1,4 +1,4 @@
-package slab
+package pool
 
 type Pool interface {
 	Alloc(int) []byte
